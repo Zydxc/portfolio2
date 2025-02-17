@@ -1,0 +1,1 @@
+// this is for the activity bar on the left side of the screen
