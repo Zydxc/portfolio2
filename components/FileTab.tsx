@@ -1,12 +1,29 @@
-export default function Navbar() { 
+'use client'
+import { useState } from "react";
+
+// NOTE: need implementation, if disclose is true, show the content of the tab else hide it
+export default function FileTab() { 
+    const [disclose, SetDisclose] = useState(true);
 return (
-    <nav>
-        <ul>
-        <li>About</li>.
-        <li>Experience</li>
-        <li>Projetcs</li>
-        <li>Skills</li>
-        <li>Contact</li>
-        </ul>
-    </nav>
+    <>   
+    <div> <img src="" alt="" /> PORTFOLIO</div>
+    <div>
+        <div>
+            <p>About</p>
+        </div>
+        <div>
+            <p>Experience</p>
+        </div>
+        <div>
+            <p>Skills</p>
+        </div>
+        <div>
+            <p>Projects</p>
+        </div>
+        <div>
+            <p>Contact</p>
+        </div>
+    </div>
+</>
+ 
 )}
