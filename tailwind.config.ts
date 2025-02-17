@@ -9,6 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        defaultFont: '#D4D4D4',
         vscBlue: "#007acc",
         dark1: "#3e3e42",
         dark2: "#2d2d30",
