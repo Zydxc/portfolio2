@@ -21,7 +21,7 @@ const data2: { icon: React.ReactElement }[] = [
 
 export default function MenuBar() {
   return (
-    <div className="py-1 px-2 flex  width-full bg-dark3 border-b border-[#1a1e22] justify-between">
+    <div className="py-1 px-2 flex  width-full bg-dark3 border-b border-borderColor justify-between">
       <div className="flex flex-row gap-4">
         <Image
           src="MenuBarIcons\icons8-visual-studio-code.svg"
@@ -37,7 +37,7 @@ export default function MenuBar() {
         ))}
       </div>
 
-      <div className="flex text-defaultFont">MyName - Visual Studio Code</div>
+      <div className="flex text-defaultFont">My Portfolio - Visual Studio Code</div>
 
       <div className="flex flex-row gap-4">
         {data2.map((item) => React.cloneElement(item.icon, { size: 15, style: iconStyle } ))}
