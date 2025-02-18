@@ -1,5 +1,7 @@
 "use client";
 import { iconDbStyle, iconJsStyle, iconNextstyle, iconTsStyle } from "@/styles/icons";
+import { capitalizeString, uncapitalizeString } from "@/utils/string";
+import { redirect } from "next/navigation";
 import React, { useState } from "react";
 import { BiLogoTypescript } from "react-icons/bi";
 import { BsDatabaseFill } from "react-icons/bs";
@@ -9,11 +11,11 @@ import { SiNextdotjs } from "react-icons/si";
 import { VscJson } from "react-icons/vsc";
 
 const data: { name: string; icon: React.ReactElement}[] = [
-  { name: "About", icon: <DiJavascript1 size={20} style={iconJsStyle} /> },
-  { name: "Experience", icon: <BiLogoTypescript size={20} style={iconTsStyle} /> },
-  { name: "Skills", icon: <SiNextdotjs size={20} style={iconNextstyle} /> },
-  { name: "Projects", icon: <BsDatabaseFill size={20} style={iconDbStyle} /> },
-  { name: "Contact", icon: <VscJson size={20} style={iconJsStyle} /> },
+  { name: "about", icon: <DiJavascript1 size={20} style={iconJsStyle} /> },
+  { name: "experience", icon: <BiLogoTypescript size={20} style={iconTsStyle} /> },
+  { name: "skills", icon: <SiNextdotjs size={20} style={iconNextstyle} /> },
+  { name: "projects", icon: <BsDatabaseFill size={20} style={iconDbStyle} /> },
+  { name: "contact", icon: <VscJson size={20} style={iconJsStyle} /> },
 ];
 
 export default function FileExplorer() {
@@ -26,7 +28,8 @@ export default function FileExplorer() {
   };
 
   const redirectPage = (name: string) => { 
-    console.log('name: ',name)
+    console.log('name: ', uncapitalizeString(name))
+    redirect(uncapitalizeString(`/${name}`))
   }
 
 
@@ -57,7 +60,7 @@ export default function FileExplorer() {
           {data.map((item, idx) => (
             <div key={idx} onClick={()=>redirectPage(item.name)} className="flex items-center flex-row gap-2 pl-4">
               <div>{item.icon}</div>
-              <p>{item.name}</p>
+              <p>{capitalizeString(item.name)}</p>
             </div>
           ))}
         </>
