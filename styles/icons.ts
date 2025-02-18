@@ -2,12 +2,30 @@
 interface StyleProps {
     fill: string;
     stroke: string;
+
+    hover?: {
+        fill: string;
+        stroke: string;
+    }
   }
+
+// interface HoverStyleProps {
+//     backgroundColor: string
+// }
   
 export const iconStyle: StyleProps = {
     fill: "#D4D4D4",
     stroke: "#007acc",
+
+    hover: {
+        fill: "#d6d6d6",
+        stroke: "#007acc",
+    }
 };
+
+// export const backgroundHoverStyle:HoverStyleProps = {
+//  backgroundColor: '#3a3a3a'
+// } 
 
 export const iconJsStyle: StyleProps = {
     fill: "#ffd600",
@@ -32,4 +50,14 @@ export const iconDbStyle: StyleProps = {
 export const iconJsonStyle: StyleProps = {
     fill: "#fbc234", 
     stroke: "#007acc", 
+}
+
+
+export const hoverStyle: React.CSSProperties = {
+    backgroundColor: "#3e3e42",
+}
+
+export const hoverIconStyle: StyleProps = {
+    fill: "#d6d6d6",
+    stroke: "#007acc",
 }

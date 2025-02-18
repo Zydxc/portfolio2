@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <div className="flex flex-row  h-fit bg-dark3 text-defaultFont">
+    <div className="flex flex-row h-fit bg-dark3 text-defaultFont border-t- border-borderColor">
         <div></div>
       <VscSourceControl size={20} />
       <VscGithub size={20} />

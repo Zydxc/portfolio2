@@ -21,26 +21,39 @@ const data2: { icon: React.ReactElement }[] = [
 
 export default function MenuBar() {
   return (
-    <div className="py-1 px-2 flex  width-full bg-dark3 border-b border-borderColor justify-between">
-      <div className="flex flex-row gap-4">
+    <div className="py-1 px-2 flex text-xs width-full bg-dark3 border-b border-borderColor justify-between">
+      <div className="flex flex-row items-center gap-2">
         <Image
           src="MenuBarIcons\icons8-visual-studio-code.svg"
-          width={25}
-          height={25}
+          width={20}
+          height={20}
           alt="vsCode"
         />
 
-        {data.map((item) => (
-          <div key={item.name} className="text-defaultFont">
+        {data.map((item, idx) => (
+          <div
+            key={idx}
+            className={`text-defaultFont px-1 rounded-lg hover:bg-vscBlue`}
+          >
             {item.name}
           </div>
         ))}
       </div>
 
-      <div className="flex text-defaultFont">My Portfolio - Visual Studio Code</div>
+      <div className="flex items-center text-sm text-defaultFont">
+        My Portfolio - Visual Studio Code
+      </div>
 
-      <div className="flex flex-row gap-4">
-        {data2.map((item) => React.cloneElement(item.icon, { size: 15, style: iconStyle } ))}
+      <div className="flex items-center flex-row gap-2">
+        {data2.map((item, idx) => (
+          <div key={idx} className={`flex items-center justify-content hover:bg-[#3a3a3a] size-6`}>
+            {React.cloneElement(item.icon, {
+              size: 16,
+              style: iconStyle,
+              key: idx,
+            })}
+          </div>
+        ))}
       </div>
     </div>
   );

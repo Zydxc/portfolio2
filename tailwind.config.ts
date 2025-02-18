@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -16,6 +17,9 @@ export default {
         dark3: "#252526",
         dark4: "#1e1e1e",
       },
+      fontFamily : {
+      Cascadia: ['Cascadia Code', 'monospace']
+      }
     },
   },
   plugins: [],

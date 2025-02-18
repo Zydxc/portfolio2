@@ -1,20 +1,24 @@
 "use client";
 import {
-    iconDbStyle,
-    iconJsonStyle,
-    iconJsStyle,
-    iconNextstyle,
-    iconTsStyle,
+  iconDbStyle,
+  iconJsonStyle,
+  iconJsStyle,
+  iconNextstyle,
+  iconTsStyle,
 } from "@/styles/icons";
 import { capitalizeString, uncapitalizeString } from "@/utils/string";
 import { redirect } from "next/navigation";
+import { useState } from "react";
 import { BiLogoTypescript } from "react-icons/bi";
 import { BsDatabaseFill } from "react-icons/bs";
 import { DiJavascript1 } from "react-icons/di";
+import { MdClose } from "react-icons/md";
 import { SiNextdotjs } from "react-icons/si";
 import { VscJson } from "react-icons/vsc";
 
 const data: { name: string; icon: React.ReactElement }[] = [
+ 
+
   { name: "about", icon: <DiJavascript1 size={20} style={iconJsStyle} /> },
   {
     name: "experience",
@@ -26,22 +30,30 @@ const data: { name: string; icon: React.ReactElement }[] = [
 ];
 
 export default function FileTab() {
+  const [activeTab, setActiveTab] = useState<string>("");
+
   const redirectPage = (name: string) => {
-    //* note page will redirect if a specific tab is clicked
-    console.log("name: ", uncapitalizeString(name));
-    redirect(uncapitalizeString(`/${name}`))
+   //buggy asf
+    // setActiveTab(name);
+    console.log("activeTab: ", name);
+    redirect(uncapitalizeString(`/${name}`));
   };
+
   return (
     <>
-      <div className="flex flex-row gap-6 h-fit w-full py-1 border-b border-borderColor text-defaultFont bg-dark3">
+      <div className="flex flex-row h-fit w-full  border-b border-borderColor text-defaultFont bg-dark3">
         {data.map((item, idx) => (
           <div
             key={idx}
             onClick={() => redirectPage(item.name)}
-            className="flex flex-row gap-2 border-r border-borderColor px-10 justify-center items-center  active:border-t active:border-vscBlue"
+            className={`flex flex-row gap-2 w-fit h-[35px] border-r border-borderColor py-1 px-2 items-center
+               ${ activeTab === item.name ? "border-t border-vscBlue text-white" : "" }
+               `}
           >
             <div>{item.icon}</div>
-            <div>{capitalizeString(item.name)}</div>
+            <div className="text-sm">{capitalizeString(item.name)}</div>
+
+            <MdClose  />
           </div>
         ))}
       </div>
