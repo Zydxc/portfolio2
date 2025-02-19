@@ -1,3 +1,4 @@
+'use client'
 import ActivityBar from "./ActivityBar";
 import FileExplorer from "./FileExplorer";
 import FileTab from "./FileTab";

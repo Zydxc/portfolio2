@@ -1,3 +1,4 @@
+'use client'
 import { iconStyle } from "@/styles/icons";
 import React from "react";
 import { BsGithub } from "react-icons/bs";

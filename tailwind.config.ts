@@ -12,6 +12,7 @@ export default {
       colors: {
         defaultFont: '#D4D4D4',
         vscBlue: "#007acc",
+        vscHighlight: "#8dc5e4",
         borderColor: "#3e3e42",
         dark2: "#2d2d30",
         dark3: "#252526",

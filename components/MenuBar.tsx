@@ -1,3 +1,4 @@
+'use client'
 import { iconStyle } from "@/styles/icons";
 import Image from "next/image";
 import React from "react";
@@ -21,19 +22,20 @@ const data2: { icon: React.ReactElement }[] = [
 
 export default function MenuBar() {
   return (
-    <div className="py-1 px-2 flex text-xs width-full bg-dark3 border-b border-borderColor justify-between">
-      <div className="flex flex-row items-center gap-2">
+    <div className="py-1 px-2 flex text-xs  cursor-default width-full bg-dark3 border-b border-borderColor justify-between">
+      <div className="flex flex-row gap-1 items-center ">
         <Image
           src="MenuBarIcons\icons8-visual-studio-code.svg"
           width={20}
           height={20}
+          className="px"
           alt="vsCode"
         />
 
         {data.map((item, idx) => (
           <div
             key={idx}
-            className={`text-defaultFont px-1 rounded-lg hover:bg-vscBlue`}
+            className={`text-defaultFont px-2 rounded-md hover:bg-vscBlue`}
           >
             {item.name}
           </div>

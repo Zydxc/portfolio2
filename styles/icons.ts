@@ -9,9 +9,7 @@ interface StyleProps {
     }
   }
 
-// interface HoverStyleProps {
-//     backgroundColor: string
-// }
+
   
 export const iconStyle: StyleProps = {
     fill: "#D4D4D4",
@@ -23,9 +21,7 @@ export const iconStyle: StyleProps = {
     }
 };
 
-// export const backgroundHoverStyle:HoverStyleProps = {
-//  backgroundColor: '#3a3a3a'
-// } 
+
 
 export const iconJsStyle: StyleProps = {
     fill: "#ffd600",
