@@ -19,6 +19,7 @@ export default function ActivityBar() {
     <div className="h-full flex flex-col bg-dark3 w-14 border-r border-borderColor pt-1 gap-6">
       {icons.map((item, idx) => (
         <div key={idx} className="flex flex-col items-center justify-center">
+          {/*eslint-disable-next-line*/}
           {React.cloneElement(item.icon, { size: 30, style: iconStyle })}
         </div>
       ))}
