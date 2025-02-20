@@ -5,7 +5,8 @@ export default function Projects() {
     <>
       <Layout>
         <div className="bg-dark2 font-Cascadia">
-          <h1>This is the Projects page</h1>
+          <h1># Projects </h1>
+          <hr className="border-dark-200 my-3"></hr>
         </div>
       </Layout>
     </>

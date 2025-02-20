@@ -5,7 +5,8 @@ export default function Skills() {
     <>
       <Layout>
         <div className="bg-dark2 font-Cascadia">
-          <h1>This is the Skills page</h1>
+          <h1># Skills </h1>
+          <hr className="border-dark-200 my-3"></hr>
         </div>
       </Layout>
     </>

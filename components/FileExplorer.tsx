@@ -6,7 +6,7 @@ import {
   iconStyle,
   iconTsStyle,
 } from "@/styles/icons";
-import { capitalizeString, uncapitalizeString } from "@/utils/string";
+import { removeFileExtensionString } from "@/utils/string";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { BiLogoTypescript } from "react-icons/bi";
@@ -18,14 +18,14 @@ import { SiNextdotjs } from "react-icons/si";
 import { VscJson } from "react-icons/vsc";
 
 const data: { name: string; icon: React.ReactElement }[] = [
-  { name: "about", icon: <DiJavascript1 size={20} style={iconJsStyle} /> },
+  { name: "about.js", icon: <DiJavascript1 size={20} style={iconJsStyle} /> },
   {
-    name: "experience",
+    name: "experience.ts",
     icon: <BiLogoTypescript size={20} style={iconTsStyle} />,
   },
-  { name: "skills", icon: <SiNextdotjs size={20} style={iconNextstyle} /> },
-  { name: "projects", icon: <BsDatabaseFill size={20} style={iconDbStyle} /> },
-  { name: "contact", icon: <VscJson size={20} style={iconJsStyle} /> },
+  { name: "skills.next", icon: <SiNextdotjs size={20} style={iconNextstyle} /> },
+  { name: "projects.db", icon: <BsDatabaseFill size={20} style={iconDbStyle} /> },
+  { name: "contact.json", icon: <VscJson size={20} style={iconJsStyle} /> },
 ];
 
 export default function FileExplorer() {
@@ -44,16 +44,16 @@ export default function FileExplorer() {
 
   const redirectPage = (name: string) => {
     setActiveTab(name);
-    console.log("activeTab: ", activeTab);
-    router.push(uncapitalizeString(`/${name}`));
+    router.push(removeFileExtensionString(`/${name}`));
   };
 
   return (
     <div className="bg-dark3 cursor-default  w-[12em] border-r border-borderColor text-defaultFont">
       <div className=" flex items-center justify-between px-5 h-[35px]">
         <p className="text-xs">EXPLORER</p>
-        <div className="hover:bg-[#545454] rounded-md p-1">       <FaEllipsis /></div>
- 
+        <div className="hover:bg-[#545454] rounded-md p-1">
+          <FaEllipsis />
+        </div>
       </div>
 
       <div
@@ -61,15 +61,9 @@ export default function FileExplorer() {
         onClick={triggerExpand}
       >
         {isExpanded ? (
-          <CgChevronRight
-            size={20}
-            style={iconStyle}
-          />
+          <CgChevronRight size={20} style={iconStyle} />
         ) : (
-          <CgChevronDown
-            size={20}
-            style={iconStyle}
-          />
+          <CgChevronDown size={20} style={iconStyle} />
         )}
 
         <p className="font-bold text-xs">PORTFOLIO</p>
@@ -90,7 +84,7 @@ export default function FileExplorer() {
               }`}
             >
               <div>{item.icon}</div>
-              <p className="text-sm">{capitalizeString(item.name)}</p>
+              <p className="text-sm">{(item.name)}</p>
             </div>
           ))}
         </div>
