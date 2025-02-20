@@ -2,7 +2,7 @@
 import Layout from "@/components/Layout";
 import { useCallback, useEffect, useState } from "react";
 
-type RepoProps = {
+interface RepoProps  {
   id: number;
   name: string;
   html_url: string;
