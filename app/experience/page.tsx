@@ -11,13 +11,13 @@ export default function Experience() {
             {/* {expData.map((item, i) => )} */}
             <div>
               <h3>CompanyName</h3>
-              <div>
+              <div className="flex justify-between">
                 <h5>Position: Web Developer Intern</h5>
                 <p>Feb 2024 - May 2024</p>
               </div>
 
               <div>
-                <ul className="list-inside">
+                <ul className="list-inside list-disc marker:text-sky-400">
                   <li>
                     Collaborated with two other interns as developers and one
                     quality assurance intern

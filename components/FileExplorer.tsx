@@ -1,33 +1,16 @@
 "use client";
+import { fileTabData } from "@/data/data";
 import {
-  iconDbStyle,
-  iconJsStyle,
-  iconNextstyle,
-  iconStyle,
-  iconTsStyle,
+  iconStyle
 } from "@/styles/icons";
 import { removeFileExtensionString } from "@/utils/string";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { BiLogoTypescript } from "react-icons/bi";
-import { BsDatabaseFill } from "react-icons/bs";
+import { useEffect, useState } from "react";
 import { CgChevronDown, CgChevronRight } from "react-icons/cg";
-import { DiJavascript1 } from "react-icons/di";
 import { FaEllipsis } from "react-icons/fa6";
-import { SiNextdotjs } from "react-icons/si";
-import { VscJson } from "react-icons/vsc";
 
-const data: { name: string; icon: React.ReactElement }[] = [
-  { name: "about.js", icon: <DiJavascript1 size={20} style={iconJsStyle} /> },
-  {
-    name: "experience.ts",
-    icon: <BiLogoTypescript size={20} style={iconTsStyle} />,
-  },
-  { name: "skills.next", icon: <SiNextdotjs size={20} style={iconNextstyle} /> },
-  { name: "projects.db", icon: <BsDatabaseFill size={20} style={iconDbStyle} /> },
-  { name: "contact.json", icon: <VscJson size={20} style={iconJsStyle} /> },
-];
 
+  
 export default function FileExplorer() {
   const router = useRouter();
   const pathname = usePathname().replace(/^\//, "");
@@ -73,18 +56,18 @@ export default function FileExplorer() {
         <></>
       ) : (
         <div className="mt-1 flex flex-col">
-          {data.map((item, idx) => (
+          {fileTabData.map((item, idx) => (
             <div
               key={idx}
               onClick={() => redirectPage(item.name)}
               className={`flex items-center flex-row hover:bg-[#545454] py-1 gap-2 pl-8 ${
-                activeTab === item.name
+                activeTab === removeFileExtensionString(item.name)
                   ? "border-vscBlue bg-[#696868] text-white"
                   : " "
               }`}
             >
               <div>{item.icon}</div>
-              <p className="text-sm">{(item.name)}</p>
+              <p className="text-sm">{item.name}</p>
             </div>
           ))}
         </div>

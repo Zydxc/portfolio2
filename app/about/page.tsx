@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -8,16 +9,24 @@ export default function About() {
           <h1># About</h1>
           <hr className="border-dark-200 my-3"></hr>
           <p>
-            Hi! My name is [My-Name]. I am a full stack software engineer
-            currently working at FullScript as a backend Ruby developer, helping
-            to build the future of whole person care! While originally going to
-            school for economics and finance, I started coding as a hobby
-            through 2021 and from that point on, I was hooked. Since then I have
-            been learning and building every opportunity I get. For some
-            examples of recent work, see .
+            Hi! My name is [My-Name]. I am a full stack web developer. I have a
+            passion for learning and building web applications. At times I
+            create new and exciting stuff that piques my interest. If my
+            character interests you feel free to see my projects or contact me. 
           </p>
-          
-          <p>For information on how to reach out,see Contact.json.</p>
+
+            
+          <p className="mt-4">
+            For information on how to reach out,see{" "}
+            <Link
+              className="underline text-yellow-200 decoration-yellow-400"
+              href="/contact"
+            >
+              contact.json
+            </Link>
+
+
+          </p>
         </div>
       </Layout>
     </>
