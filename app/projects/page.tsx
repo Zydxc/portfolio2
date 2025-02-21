@@ -1,16 +1,16 @@
 "use client";
 import Layout from "@/components/Layout";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
-interface RepoProps  {
+interface RepoProps {
   id: number;
   name: string;
   html_url: string;
   description: string;
-};
+}
 
 export default function Projects() {
-
   const [repos, setRepos] = useState<RepoProps[]>([]);
 
   const fetchRepos = useCallback(async () => {
@@ -33,14 +33,12 @@ export default function Projects() {
     }
   }, []);
 
-
   useEffect(() => {
     fetchRepos();
   }, [fetchRepos]);
 
-
-console.log(repos);
-// I need to refurbish my repos 
+  console.log(repos);
+  // I need to refurbish my repos
   return (
     <>
       <Layout>
@@ -49,16 +47,16 @@ console.log(repos);
           <hr className="border-dark-200 my-3"></hr>
           <div>
             {repos.length > 0 ? (
-              <ul>
-                {repos.map((repo) => (
-                  <li key={repo.id}>
-                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                      {repo.name}
-                    </a>
-                    <p>{repo.description}</p>
-                  </li>
+              <div className="grid grid-cols-3  gap-4">
+                {repos.map((repo, idx) => (
+                  <div key={idx} className="border w-[290px] rounded-md p-2">
+                    <div>
+                      <Link href={repo.html_url}>{repo.name}</Link>
+                      <p className="text-xs text-[#92cded]">{repo.description}</p>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
             ) : (
               <p>No repositories found.</p>
             )}
