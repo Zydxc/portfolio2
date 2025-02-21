@@ -3,9 +3,12 @@ import { iconStyle } from "@/styles/icons";
 import React from "react";
 import { BsGithub } from "react-icons/bs";
 import { VscAccount, VscCopilot, VscDebug, VscFiles, VscSearch } from "react-icons/vsc";
+import { IconBaseProps } from "react-icons";
+interface IconItem {
+  icon: React.ReactElement<IconBaseProps>;
+}
 
-
-const icons: { icon: React.ReactElement }[] = [
+const icons: IconItem[] = [
   { icon: <VscFiles /> },
   { icon: <BsGithub /> },
   { icon: <VscSearch /> },

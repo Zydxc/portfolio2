@@ -4,6 +4,11 @@ import Image from "next/image";
 import React from "react";
 import { BiCopy, BiMinus } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
+import { IconBaseProps } from "react-icons";
+
+interface IconItem {
+  icon: React.ReactElement<IconBaseProps>;
+}
 
 const data: { name: string }[] = [
   { name: "File" },
@@ -14,7 +19,7 @@ const data: { name: string }[] = [
   { name: "Help" },
 ];
 
-const data2: { icon: React.ReactElement }[] = [
+const data2: IconItem[] = [
   { icon: <BiMinus /> },
   { icon: <BiCopy /> },
   { icon: <MdClose /> },
@@ -22,10 +27,10 @@ const data2: { icon: React.ReactElement }[] = [
 
 export default function MenuBar() {
   return (
-    <div className="py-1 px-2 flex text-xs  cursor-default width-full bg-dark3 border-b border-borderColor justify-between">
-      <div className="flex flex-row gap-1 items-center ">
+    <div className="py-1 px-2 flex text-xs cursor-default w-full bg-dark3 border-b border-borderColor justify-between">
+      <div className="flex flex-row gap-1 items-center">
         <Image
-          src="MenuBarIcons\icons8-visual-studio-code.svg"
+          src="/MenuBarIcons/icons8-visual-studio-code.svg"
           width={20}
           height={20}
           className="px"
@@ -35,7 +40,7 @@ export default function MenuBar() {
         {data.map((item, idx) => (
           <div
             key={idx}
-            className={`text-defaultFont px-2 rounded-md hover:bg-vscBlue`}
+            className="text-defaultFont px-2 rounded-md hover:bg-vscBlue"
           >
             {item.name}
           </div>
@@ -48,11 +53,10 @@ export default function MenuBar() {
 
       <div className="flex items-center flex-row gap-2">
         {data2.map((item, idx) => (
-          <div key={idx} className={`flex items-center justify-content hover:bg-[#3a3a3a] size-6`}>
+          <div key={idx} className="flex items-center justify-center hover:bg-[#3a3a3a] p-1">
             {React.cloneElement(item.icon, {
               size: 16,
               style: iconStyle,
-              key: idx,
             })}
           </div>
         ))}

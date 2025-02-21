@@ -9,7 +9,6 @@ interface StyleProps {
     }
   }
 
-
   
 export const iconStyle: StyleProps = {
     fill: "#D4D4D4",
