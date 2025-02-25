@@ -40,7 +40,8 @@ export default function FileTab() {
             <div className="text-sm">{item.name}</div>
 
             <div className="w-[20px] h-[20px] flex items-center justify-center">
-              {activeTab === item.name && <MdClose />}
+              {activeTab === removeFileExtensionString(item.name) && <MdClose />}
+ 
             </div>
           </div>
         ))}
