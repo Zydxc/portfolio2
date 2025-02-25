@@ -5,14 +5,13 @@ import {
   VscArrowUp,
   VscBell,
   VscBracketDot,
-  VscCheck,
   VscCheckAll,
   VscError,
   VscGitCommit,
   VscRemote,
   VscSourceControl,
   VscSync,
-  VscWarning,
+  VscWarning
 } from "react-icons/vsc";
 
 export default function Footer() {
