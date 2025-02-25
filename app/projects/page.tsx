@@ -37,7 +37,7 @@ export default function Projects() {
     fetchRepos();
   }, [fetchRepos]);
 
-  console.log(repos);
+
   // I need to refurbish my repos
   return (
     <>

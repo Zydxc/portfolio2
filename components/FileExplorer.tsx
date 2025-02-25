@@ -60,10 +60,10 @@ export default function FileExplorer() {
             <div
               key={idx}
               onClick={() => redirectPage(item.name)}
-              className={`flex items-center flex-row hover:bg-[#545454] py-1 gap-2 pl-8 ${
+              className={`flex items-center flex-row  py-1 gap-2 pl-8 ${
                 activeTab === removeFileExtensionString(item.name)
-                  ? "border-vscBlue bg-[#696868] text-white"
-                  : " "
+                  ? "bg-[#545454] text-white" 
+                  : "hover:bg-[#47474770]"
               }`}
             >
               <div>{item.icon}</div>

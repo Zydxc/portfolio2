@@ -18,6 +18,11 @@ interface skillsProps {
   skill: string;
 }
 
+export const myData = {
+  firsName: 'Mel Ivan',
+  lastName: 'Abolencia'
+}
+
 export const expData: ExperienceProps[] = [
 
   {

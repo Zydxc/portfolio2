@@ -5,8 +5,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MdClose } from "react-icons/md";
 
-
-
 export default function FileTab() {
   const pathname = usePathname().replace(/^\//, "");
   const router = useRouter();
@@ -39,9 +37,10 @@ export default function FileTab() {
             <div>{item.icon}</div>
             <div className="text-sm">{item.name}</div>
 
-            <div className="w-[20px] h-[20px] flex items-center justify-center">
-              {activeTab === removeFileExtensionString(item.name) && <MdClose />}
- 
+            <div className="w-[20px] h-[20px] flex items-center justify-center ">
+              {activeTab === removeFileExtensionString(item.name) && (
+                <MdClose className="hover-bgdark2 " />
+              )}
             </div>
           </div>
         ))}
