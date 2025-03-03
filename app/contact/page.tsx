@@ -1,16 +1,5 @@
 import Layout from "@/components/Layout";
-
-interface ContactData {
-  name: string;
-  link: string;
-}
-
-const data: ContactData[] = [
-  { name: "Google", link: "mi.work2231@gmail.com" },
-  { name: "Facebook", link: "https://www.facebook.com/" },
-  { name: "Github", link: "https://github.com/Zydxc" },
-  { name: "LinkedIn", link: "https://www.linkedin.com/" },
-];
+import { contactData } from "@/data/data";
 
 export default function Contact() {
   return (
@@ -20,9 +9,24 @@ export default function Contact() {
           <h1># Contact</h1>
           <hr className="border-dark-200 my-3"></hr>
           <div>
-         
-            {data.map((item, i) => <p key={i} className="">{`${i + 1} ${item.name}: ${item.link}`}</p>)}
- 
+            {contactData.map((item, i) => (
+              <p key={i} className="">
+                {`${i + 1} ${item.name}: `}
+                {item.name === "Google" ? (
+                  <a
+                    href={`mailto:${item.link}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.link}
+                  </a>
+                ) : (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    {item.link}
+                  </a>
+                )}
+              </p>
+            ))}
           </div>
         </div>
       </Layout>

@@ -18,6 +18,18 @@ interface skillsProps {
   skill: string;
 }
 
+interface ContactData {
+  name: string;
+  link: string;
+}
+
+export const contactData: ContactData[] = [
+  { name: "Google", link: "mi.work2231@gmail.com" },
+  { name: "Facebook", link: "https://www.facebook.com/melivan.abolencia" },
+  { name: "Github", link: "https://github.com/Zydxc" },
+  { name: "LinkedIn", link: "https://www.linkedin.com/in/mel-ivan-abolencia-3560b02a6/" },
+];
+
 export const myData = {
   firsName: 'Mel Ivan',
   lastName: 'Abolencia'

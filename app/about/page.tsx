@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { myData } from "@/data/data";
 import Link from "next/link";
 
 export default function About() {
@@ -9,13 +10,12 @@ export default function About() {
           <h1># About</h1>
           <hr className="border-dark-200 my-3"></hr>
           <p>
-            Hi! My name is [My-Name]. I am a full stack web developer. I have a
+            {` Hi! My name is ${myData.firsName} ${myData.lastName}. I am a full stack web developer. I have a
             passion for learning and building web applications. At times I
             create new and exciting stuff that piques my interest. If my
-            character interests you feel free to see my projects or contact me. 
+            character interests you feel free to see my projects or contact me.`}
           </p>
 
-            
           <p className="mt-4">
             For information on how to reach out,see{" "}
             <Link
@@ -24,8 +24,6 @@ export default function About() {
             >
               contact.json
             </Link>
-
-
           </p>
         </div>
       </Layout>
